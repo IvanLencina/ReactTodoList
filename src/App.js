@@ -17,10 +17,29 @@ function App(props) {
   const [ todos, setTodos] = React.useState(defaultTodos);
   const [ searchValue, setSearchValue ] = React.useState('');
 
+  const completedTodosCount = todos.filter(todo => !!todo.completed).length;
+  const totalTodos = todos.length;
+
+  let searchedTodos = [];
+
+  if (!searchValue.length >= 1) {
+    searchedTodos = todos;
+  } else {
+    searchedTodos = todos.filter(todo => {
+      const todoText = todo.text.toLowerCase();
+      const searchText = searchValue.toLowerCase();
+
+      return todoText.includes(searchText);
+    })
+  }
+
   return (
     // React.Fragments inserts an Invisible tag in order to avoid using a div.
     <React.Fragment>
-      <TodoCounter />
+      <TodoCounter
+        completedTodosCount={completedTodosCount}
+        totalTodos={totalTodos}
+      />
 
       <TodoSearch
         searchValue={searchValue}
@@ -28,7 +47,7 @@ function App(props) {
       />
 
       <TodoList>
-        {todos.map((todo, index) => (
+        {searchedTodos.map((todo, index) => (
           <TodoItem key={index} text={todo.text} completed={todo.completed} />
         ))}
       </TodoList>
