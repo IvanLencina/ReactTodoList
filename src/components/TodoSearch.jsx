@@ -1,11 +1,18 @@
-
 import React from "react";
 import "../styles/TodoSearch.css";
 
 function TodoSearch() {
-    return (
-        <input className="todo_search" placeholder="Cebolla" />
-    )
+  const onSearchValueChange = (event) => {
+    console.log(event.target.value);
+  }
+
+  return (
+    <input 
+      className="todo_search"
+      placeholder="Cebolla"
+      onChange={onSearchValueChange}
+    />
+  );
 }
 
 export { TodoSearch };
