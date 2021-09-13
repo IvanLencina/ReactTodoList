@@ -14,12 +14,17 @@ const todos = [
 ];
 
 function App(props) {
+  const [ searchValue, setSearchValue ] = React.useState('');
+
   return (
     // React.Fragments inserts an Invisible tag in order to avoid using a div.
     <React.Fragment>
       <TodoCounter />
 
-      <TodoSearch />
+      <TodoSearch
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
 
       <TodoList>
         {todos.map((todo, index) => (
