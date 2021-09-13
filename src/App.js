@@ -8,10 +8,10 @@ import { TodoList } from "./components/TodoList";
 import { TodoSearch } from "./components/TodoSearch";
 
 const todos = [
-  { text: 'Cortar cebolla', completed: true },
-  { text: 'Pelar papas', completed: false },
-  { text: 'Salir a correr', completed: false }
-]
+  { text: "Cortar cebolla", completed: true },
+  { text: "Pelar papas", completed: false },
+  { text: "Salir a correr", completed: false },
+];
 
 function App(props) {
   return (
@@ -20,15 +20,11 @@ function App(props) {
       <TodoCounter />
 
       <TodoSearch />
-      
+
       <TodoList>
-        { todos.map((todo, index) => (
-          <TodoItem 
-            key={index} 
-            text={todo.text}
-            completed={todo.completed} 
-          />
-        )) }
+        {todos.map((todo, index) => (
+          <TodoItem key={index} text={todo.text} completed={todo.completed} />
+        ))}
       </TodoList>
 
       <CreateTodoButton />
