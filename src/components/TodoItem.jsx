@@ -7,7 +7,7 @@ function TodoItem(props) {
   }
 
   const onDelete = () => {
-    alert('Borraste el TODO: ' + props.text);
+    props.onDelete();
   }
 
   return (

@@ -50,6 +50,12 @@ function App(props) {
     setTodos(newTodos);
   }
 
+  const deleteTodo = (text) => {
+    const newTodos = todos.filter(todo => todo.text !== text);
+
+    setTodos(newTodos);
+  }
+
   return (
     // React.Fragments inserts an Invisible tag in order to avoid using a div.
     <React.Fragment>
@@ -70,6 +76,7 @@ function App(props) {
             text={todo.text}
             completed={todo.completed} 
             onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
             />
         ))}
       </TodoList>
