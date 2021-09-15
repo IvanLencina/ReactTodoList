@@ -1,11 +1,5 @@
-// import './App.css';
-
 import React from "react";
-import { CreateTodoButton } from "./components/CreateTodoButton";
-import { TodoCounter } from "./components/TodoCounter";
-import { TodoItem } from "./components/TodoItem";
-import { TodoList } from "./components/TodoList";
-import { TodoSearch } from "./components/TodoSearch";
+import { TodoUI } from "./components/TodoUI";
 
 const defaultTodos = [
   { text: "Cortar cebolla", completed: true },
@@ -57,32 +51,15 @@ function App(props) {
   }
 
   return (
-    // React.Fragments inserts an Invisible tag in order to avoid using a div.
-    <React.Fragment>
-      <TodoCounter
-        completedTodosCount={completedTodosCount}
-        totalTodos={totalTodos}
+    <TodoUI 
+      completedTodosCount={completedTodosCount}
+      totalTodos={totalTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      toggleTodoCompletion={toggleTodoCompletion}
+      deleteTodo={deleteTodo}
       />
-
-      <TodoSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-
-      <TodoList>
-        {searchedTodos.map((todo, index) => (
-          <TodoItem 
-            key={index}
-            text={todo.text}
-            completed={todo.completed} 
-            onComplete={() => toggleTodoCompletion(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-            />
-        ))}
-      </TodoList>
-
-      <CreateTodoButton />
-    </React.Fragment>
   );
 }
 
