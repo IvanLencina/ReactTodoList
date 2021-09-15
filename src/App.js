@@ -41,11 +41,11 @@ function App(props) {
     })
   }
 
-  const completeTodo = (text) => {
+  const toggleTodoCompletion = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     
     const newTodos = [...todos];
-    newTodos[todoIndex].completed = true;
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
 
     setTodos(newTodos);
   }
@@ -75,7 +75,7 @@ function App(props) {
             key={index}
             text={todo.text}
             completed={todo.completed} 
-            onComplete={() => completeTodo(todo.text)}
+            onComplete={() => toggleTodoCompletion(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
             />
         ))}
