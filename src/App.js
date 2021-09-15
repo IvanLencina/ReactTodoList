@@ -41,6 +41,15 @@ function App(props) {
     })
   }
 
+  const completeTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+    
+    const newTodos = [...todos];
+    newTodos[todoIndex].completed = true;
+
+    setTodos(newTodos);
+  }
+
   return (
     // React.Fragments inserts an Invisible tag in order to avoid using a div.
     <React.Fragment>
@@ -56,7 +65,12 @@ function App(props) {
 
       <TodoList>
         {searchedTodos.map((todo, index) => (
-          <TodoItem key={index} text={todo.text} completed={todo.completed} />
+          <TodoItem 
+            key={index}
+            text={todo.text}
+            completed={todo.completed} 
+            onComplete={() => completeTodo(todo.text)}
+            />
         ))}
       </TodoList>
 
