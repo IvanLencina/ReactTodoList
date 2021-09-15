@@ -1,11 +1,11 @@
 import React from "react";
-import { CreateTodoButton } from "./CreateTodoButton";
-import { TodoCounter } from "./TodoCounter";
-import { TodoItem } from "./TodoItem";
-import { TodoList } from "./TodoList";
-import { TodoSearch } from "./TodoSearch";
+import { CreateTodoButton } from "./components/CreateTodoButton";
+import { TodoCounter } from "./components/TodoCounter";
+import { TodoItem } from "./components/TodoItem";
+import { TodoList } from "./components/TodoList";
+import { TodoSearch } from "./components/TodoSearch";
 
-function TodoUI({
+function AppUI({
   completedTodosCount,
   totalTodos,
   searchValue,
@@ -44,4 +44,4 @@ function TodoUI({
   )
 }
 
-export { TodoUI };
+export { AppUI };

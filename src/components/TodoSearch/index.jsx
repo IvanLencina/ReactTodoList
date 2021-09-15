@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/TodoSearch.css";
+import "./TodoSearch.css";
 
 // Specific props declared replacing the useSate in order to expect
 // that information from other component. The state will be handled by a higher component.

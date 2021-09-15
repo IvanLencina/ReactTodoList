@@ -1,5 +1,5 @@
 import React from "react";
-import { TodoUI } from "./components/TodoUI";
+import { AppUI } from "./AppUI";
 
 const defaultTodos = [
   { text: "Cortar cebolla", completed: true },
@@ -51,7 +51,7 @@ function App(props) {
   }
 
   return (
-    <TodoUI 
+    <AppUI 
       completedTodosCount={completedTodosCount}
       totalTodos={totalTodos}
       searchValue={searchValue}
