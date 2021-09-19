@@ -23,6 +23,8 @@ function TodoProvider(props) {
   // different actions with that shared state, eg: filtering by input search in the renderer list of todos.
   const [ searchValue, setSearchValue ] = React.useState('');
 
+  const [isModalOpened, setIsModalOpened] = React.useState(false);
+
   // Calculating the completed and total todos to pass them to the TodoCounter component.
   // these properties are being updated every todo state change.
   const completedTodosCount = todos.filter(todo => !!todo.completed).length;
@@ -70,6 +72,8 @@ function TodoProvider(props) {
       searchedTodos,
       toggleTodoCompletion,
       deleteTodo,
+      isModalOpened,
+      setIsModalOpened
     }}>
       {props.children}
     </TodoContext.Provider>
