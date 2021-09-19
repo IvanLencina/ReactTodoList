@@ -1,9 +1,9 @@
 import React from "react";
+import { TodoContext } from "../../TodoContext";
 import "./TodoSearch.css";
 
-// Specific props declared replacing the useSate in order to expect
-// that information from other component. The state will be handled by a higher component.
-function TodoSearch({ searchValue, setSearchValue }) {
+function TodoSearch() {
+  const { searchValue, setSearchValue } = React.useContext(TodoContext);
 
   const onSearchValueChange = (event) => {
     console.log(event.target.value);
