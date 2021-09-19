@@ -19,7 +19,7 @@ function TodoProvider(props) {
     error
   } = useLocalStorage('TODOS_V1', []);
 
-  // The same for the searchValue state. It was moved from TodoSearch component because we will performing
+  // The same for the searchValue state. It was moved from TodoSearch component because we will be performing
   // different actions with that shared state, eg: filtering by input search in the renderer list of todos.
   const [ searchValue, setSearchValue ] = React.useState('');
 
