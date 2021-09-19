@@ -23,31 +23,32 @@ import { TodoContext } from "./TodoContext";
  */
 
 function AppUI() {
+  // Alternative to the context Consumer using the react hook "useContext". It expects a context and returns the value object.
+  // const value = React.useContext(TodoContext);
+  // So we can destructure the value... (and we can delete the TodoContext.Consumer tag.).
+  const { error, loading, searchedTodos, toggleTodoCompletion, deleteTodo } = React.useContext(TodoContext);
+
   return (
     // React.Fragments inserts an Invisible tag in order to avoid using a div.
     <React.Fragment>
       <TodoCounter />
       <TodoSearch/>
 
-      <TodoContext.Consumer>
-        {({ error, loading, searchedTodos, toggleTodoCompletion, deleteTodo }) => ( //** {(value) => ()} */}
-          <TodoList>
-            { error && <p>Desespérate, hubo un error...</p> }
-            { loading && <p>Estamos cargando, no desesperes...</p> }
-            { (!loading && !searchedTodos.length) && <p>Crea tu primer TODO</p> }
-      
-            {searchedTodos.map((todo, index) => (
-              <TodoItem 
-                key={index}
-                text={todo.text}
-                completed={todo.completed} 
-                onComplete={() => toggleTodoCompletion(todo.text)}
-                onDelete={() => deleteTodo(todo.text)}
-                />
-            ))}
-          </TodoList>
-        )}
-      </TodoContext.Consumer>
+      <TodoList>
+        { error && <p>Desespérate, hubo un error...</p> }
+        { loading && <p>Estamos cargando, no desesperes...</p> }
+        { (!loading && !searchedTodos.length) && <p>Crea tu primer TODO</p> }
+  
+        {searchedTodos.map((todo, index) => (
+          <TodoItem 
+            key={index}
+            text={todo.text}
+            completed={todo.completed} 
+            onComplete={() => toggleTodoCompletion(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
+            />
+        ))}
+      </TodoList>
 
       <CreateTodoButton />
     </React.Fragment>
