@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-function Modal() {
+function Modal({ children }) {
   return ReactDOM.createPortal(
-    <p>asdasdsad</p>,
+    children,
     document.getElementById("modal")
   );
 }
