@@ -5,7 +5,7 @@ import { TodoItem } from "./components/TodoItem";
 import { TodoList } from "./components/TodoList";
 import { TodoSearch } from "./components/TodoSearch";
 import { TodoContext } from "./TodoContext";
-
+import { Modal } from "./components/Modal";
 
 /**
  * Explicacion:
@@ -49,6 +49,10 @@ function AppUI() {
             />
         ))}
       </TodoList>
+
+      <Modal>
+        <p>Portal funcionando!!</p>
+      </Modal>
 
       <CreateTodoButton />
     </React.Fragment>
