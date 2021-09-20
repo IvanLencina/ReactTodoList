@@ -26,7 +26,7 @@ function AppUI() {
   // Alternative to the context Consumer using the react hook "useContext". It expects a context and returns the value object.
   // const value = React.useContext(TodoContext);
   // So we can destructure the value... (and we can delete the TodoContext.Consumer tag.).
-  const { error, loading, searchedTodos, toggleTodoCompletion, deleteTodo } = React.useContext(TodoContext);
+  const { error, loading, searchedTodos, toggleTodoCompletion, deleteTodo, isModalOpened, setIsModalOpened } = React.useContext(TodoContext);
 
   return (
     // React.Fragments inserts an Invisible tag in order to avoid using a div.
@@ -50,11 +50,13 @@ function AppUI() {
         ))}
       </TodoList>
 
-      <Modal>
-        <p>Portal funcionando!!</p>
-      </Modal>
+      {!!isModalOpened && (
+        <Modal>
+          <p>Portal funcionando!!</p>
+        </Modal>
+      )}
 
-      <CreateTodoButton />
+      <CreateTodoButton setIsModalOpened={setIsModalOpened} />
     </React.Fragment>
   )
 }
