@@ -6,6 +6,7 @@ import { TodoList } from "./components/TodoList";
 import { TodoSearch } from "./components/TodoSearch";
 import { TodoContext } from "./TodoContext";
 import { Modal } from "./components/Modal";
+import { TodoForm } from "./components/TodoForm";
 
 /**
  * Explicacion:
@@ -52,7 +53,7 @@ function AppUI() {
 
       {!!isModalOpened && (
         <Modal>
-          <p>Portal funcionando!!</p>
+          <TodoForm />
         </Modal>
       )}
 
