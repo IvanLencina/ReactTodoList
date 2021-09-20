@@ -1,5 +1,6 @@
 import React from "react";
 import { TodoContext } from "../../TodoContext";
+import "./TodoForm.css";
 
 function TodoForm() {
   // Estado para almacenar el value del textarea donde creamos la tarea.
@@ -38,9 +39,9 @@ function TodoForm() {
         placeholder="Cortar la cebolla para el almuerzo"
       ></textarea>
 
-      <div>
-        <button type="button" onClick={onCancel}>Cancelar</button>
-        <button type="submit">Añadir</button>
+      <div className="TodoForm-buttonContainer">
+        <button type="button" onClick={onCancel} className="TodoForm-button TodoForm-button-cancel">Cancelar</button>
+        <button type="submit" className="TodoForm-button TodoForm-button-add">Añadir</button>
       </div>
     </form>
   )
