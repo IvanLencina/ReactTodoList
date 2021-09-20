@@ -6,6 +6,7 @@ function CreateTodoButton() {
   const { isModalOpened, setIsModalOpened } = React.useContext(TodoContext);
 
   const onButtonClick = () => {
+    // setIsModalOpened(prevState => !prevState); // Ejemplo con prevState (setState admite una funcion que devuelve el estado previo).
     setIsModalOpened(!isModalOpened);
   }
 
