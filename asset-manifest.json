@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ReactTodoList/static/css/main.3e7118b9.chunk.css",
+    "main.js": "/ReactTodoList/static/js/main.caf27e7a.chunk.js",
+    "main.js.map": "/ReactTodoList/static/js/main.caf27e7a.chunk.js.map",
+    "runtime-main.js": "/ReactTodoList/static/js/runtime-main.afd5d316.js",
+    "runtime-main.js.map": "/ReactTodoList/static/js/runtime-main.afd5d316.js.map",
+    "static/js/2.241fc861.chunk.js": "/ReactTodoList/static/js/2.241fc861.chunk.js",
+    "static/js/2.241fc861.chunk.js.map": "/ReactTodoList/static/js/2.241fc861.chunk.js.map",
+    "index.html": "/ReactTodoList/index.html",
+    "static/css/main.3e7118b9.chunk.css.map": "/ReactTodoList/static/css/main.3e7118b9.chunk.css.map",
+    "static/js/2.241fc861.chunk.js.LICENSE.txt": "/ReactTodoList/static/js/2.241fc861.chunk.js.LICENSE.txt",
+    "static/media/check.d644c682.svg": "/ReactTodoList/static/media/check.d644c682.svg",
+    "static/media/remove.562b6f7b.svg": "/ReactTodoList/static/media/remove.562b6f7b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.afd5d316.js",
+    "static/js/2.241fc861.chunk.js",
+    "static/css/main.3e7118b9.chunk.css",
+    "static/js/main.caf27e7a.chunk.js"
+  ]
+}
