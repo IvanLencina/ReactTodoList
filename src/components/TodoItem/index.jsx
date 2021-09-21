@@ -1,5 +1,7 @@
 import React from 'react';
 import './TodoItem.css';
+import { CompleteIcon } from '../TodoIcon/CompleteIcon';
+import { DeleteIcon } from '../TodoIcon/DeleteIcon';
 
 function TodoItem(props) {
   const onComplete = () => {
@@ -12,15 +14,16 @@ function TodoItem(props) {
 
   return (
     <li className="todo_item">
-      <span className={`icon icon-check ${props.completed && 'icon-check--active'}`} onClick={onComplete}>
-        √
-      </span>
+      <CompleteIcon
+        completed={props.completed}
+        onComplete={onComplete}
+      />
       <p className={`todo_item-p ${props.completed && 'todo_item-p--complete'}`}>
         {props.text}
       </p>
-      <span className="icon icon-delete" onClick={onDelete}>
-        X
-      </span>
+      <DeleteIcon
+        onDelete={onDelete}
+      />
     </li>
   );
 }
